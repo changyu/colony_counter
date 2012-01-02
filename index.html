@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Colony Counter</title>
+<link rel="stylesheet" type="text/css" href="./images/colc.css">
+<script type="text/javascript" src="./images/e.js">
+</script>
+</head>
+<body onload="initImg('plateCVS','glassPanel', 'plateImg');">
+<div id="ctrlp">
+  <div class="slider" id="slider01" style="position: absolute; left:245; top:20;">   
+   <div class="left"></div>
+   <div class="right"></div>
+   <img style="left: 0px;"  src="./images/knob.png" width="30" height="12">
+  </div>
+   <div  style="position: absolute; left:340; top:32;" >Background Threshold: <input class="threshold" value="0" id="output1" size="5" disabled="disabled" > </div>
+
+   <div class="slider" id="slider02" style="position: absolute; left:245; top:60;">
+     <div class="left"></div>
+     <div class="right"></div>
+     <img style="left: 0px;" src="images/knob.png" width="30" height="12">
+   </div>
+   <div  style="position: absolute; left:375; top:72;" >Count Threshold: <input  class="threshold" value="0" id="output2" size="5" style="" disabled="disabled" ></div>
+   <table  style="position: absolute; left:240; top:100;font-size:11px;" ><tr>
+       <td  width=350>
+       <button name="invert" onclick="javascript:drawBImg();drawEdge();drawBImg();"> Border </button>
+       <button name="reset" onclick="paintIt()">Reset1 </button>
+       <button name="clear" onclick="history.go(0)">Reset2 </button>
+       <button name="score" onclick="setWValue()">Score</button>
+       <button name="saveimg" STYLE="background-color:#CCCEEE;font-weight:bold; font-size:10pt;color:#623;"
+       onclick=" saveIt()"> Save</button>
+       </tr>
+   </table>
+
+   <div style="position: absolute; left:70; top:20;">
+      <img src="images/nav4.gif" width="150" height="105" BORDER="0" USEMAP="#nav4"/>
+      <map name="nav4">
+      <area shape="circle" coords="15,15,17"  href="javascript:drawImg(1,0)"/>
+      <area shape="circle" coords="57,15,17"  href="javascript:drawImg(-1,0)"/>
+      <area shape="circle" coords="95,15,17" href="javascript:drawImg(0,1)"/>
+      <area shape="circle" coords="135,15,17"  href="javascript:drawImg(0,-1)"/>
+      <area shape="circle" coords="15,54,17"  href="javascript:zoomImg(0.02)"/>
+      <area shape="circle" coords="57,54,17"  href="javascript:zoomImg(-0.02)"/>
+      <area shape="circle" coords="95,54,17" href="javascript:rotateImg(1)"/>
+      <area shape="circle" coords="135,54,17" href="javascript:rotateImg(-1)"/>
+      <area shape="circle" coords="15,95,17" href="javascript:darkenImg(1.05)"/>
+      <area shape="circle" coords="57,95,17"  href="javascript:darkenImg(0.95)"/>
+      <area shape="circle" coords="95,95,17" href="javascript:drawInvertedImage()"/>
+      <area shape="circle" coords="135,95,17" href="javascript:drawBImg()"/>
+      </map>
+      </div>	
+</div>
+<img id="plateImg" src="Please_drop_in_an_image_in_above_panel!" alt="" style="position: absolute; left: 50; top:180; z-index: 0; height:0; width:0; visibility:hidden;">
+ <canvas id="plateCVS"  width="608" height="510"
+   style="position: absolute; left: 60; top:175; z-index: 1;background:transparent;border: 1px solid #fff;"></canvas>
+ <canvas id="glassPanel"  width="608" height="510" 
+   style="position: absolute; left: 60; top: 175; z-index: 2;background: transparent;border: 2px solid #fff;"></canvas>
+<div  style="position: absolute; left: 70; top: 675; z-index:3;background:transparent"><label style='float:left;width:5em;display:block'>note:</label> <textarea name="comment" rows="2" cols="55" id="comment"> </textarea></div>
+<a id="checkit" href=''>Check It</a>
+</div>
+</body>
+</html>

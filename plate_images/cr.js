@@ -1,0 +1,15 @@
+var ct='<br /><center>';
+ct+='<table cellpadding=5 cellspacing=0 border=0 width="60%" class="donate"><tr valign="top">';
+ct+='<td><form action="https://www.paypal.com/cgi-bin/webscr" method="post">';
+ct+='<input type="hidden" name="cmd" value="_xclick" />';
+ct+='<input type="hidden" name="business" value="scriptasylum@hotmail.com" />';
+ct+='<input type="hidden" name="no_note" value="1" />';
+ct+='<input type="hidden" name="currency_code" value="USD" />';
+ct+='<input type="hidden" name="tax" value="0" />';
+ct+='<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - its fast, free and secure!" />';
+ct+='</form></td>';
+ct+='<td align="left">All materials at this site are considered freeware, but if someone would like to donate a small token of appreciation, you can use the Paypal button. It\'s fast, secure, easy, and <b>greatly</b> appreciated!</td>';
+ct+='</tr>';
+ct+='<tr><td colspan="2" align="center">Copyright &copy; 1998-'+new Date().getFullYear()+' http://scriptasylum.com</td></tr>';
+ct+='</table></center>';
+document.write(ct);
